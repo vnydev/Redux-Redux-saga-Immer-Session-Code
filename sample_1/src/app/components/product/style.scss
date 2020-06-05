@@ -1,0 +1,33 @@
+.product {
+    width: 100%;
+    padding: 5%;;
+    .action{
+        width: 100%;
+        text-align: right;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 2%;
+    }
+}
+
+.addProForm{
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+
+    .alert_msg{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    form{
+        margin: 0px auto;
+        width: 500px;
+        height: 100%;
+
+        .field{
+            margin: 2%;
+        }
+    }
+}
