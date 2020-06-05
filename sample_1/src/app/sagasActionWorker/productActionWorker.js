@@ -1,7 +1,7 @@
 import { call, put, takeLatest, select, take, takeEvery } from 'redux-saga/effects';
 
 import { Fetch } from  '../../services/http';
-import { SET_PRODUCT, SET_ERROR, PRO_FETCH_REQUEST, CREATE_PRODUCT, getProductState } from '../reducers/productSlice';
+import { SET_PRODUCT, SET_ERROR, PRO_FETCH_REQUEST, CREATE_PRODUCT, getProductState } from '../reducers/productSlice'; 
 
 // Http Request
 const GetProductsList = ()=> {

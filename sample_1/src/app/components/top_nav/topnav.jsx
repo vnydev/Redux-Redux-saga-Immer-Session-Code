@@ -50,9 +50,9 @@ class TopNavComponent extends React.Component {
                     <Menu.Item key="1" icon={<UserAddOutlined />}>
                         <Link to="/users">Users</Link>
                     </Menu.Item>
-                    <Menu.Item key="2" icon={<ProfileFilled />}>
+                    {/* <Menu.Item key="2" icon={<ProfileFilled />}>
                         <Link to="/profile">Profile</Link>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     <SubMenu icon={<HomeFilled />} title="">
                         <Menu.Item key="3"> 
                             <Link to="/">Home</Link> 

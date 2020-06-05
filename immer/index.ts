@@ -17,6 +17,7 @@ const productData = [
 
 const nextProductData = produce(productData, draft => {
     draft.push({name:"Nokia", price: 4000})
+    // return draft;
 })
 
 console.log(productData.length)

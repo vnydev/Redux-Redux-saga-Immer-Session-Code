@@ -1,9 +1,25 @@
-function* delay(ms){
-    yield setTimeout(_ => {
-        console.log("setTimeout after "+ ms);
-        // return "delay method";
-    }, ms);
-};
+function* generatorSmaple(){
+    yield "1";
+    yield "2";
+    yield "3";
+}
+
+const sample = generatorSmaple();
+// console.log(sample)
+
+// console.log(sample.next());
+// console.log(sample.next());
+
+for(let s of sample){
+    console.log(s)
+}
+
+// function* delay(ms){
+//     yield setTimeout(_ => {
+//         console.log("setTimeout after "+ ms);
+//         // return "delay method";
+//     }, ms);
+// };
 
 function* fetchUser (n){
     yield* delay(2000);
@@ -42,21 +58,14 @@ class Foo {
 const SomeObj = {
     *[Symbol.iterator] () {
       yield 'a';
-      yield* delay(1000)
+      yield* delay(5000)
       yield 'b';
-    },
-    /**
-     * duplicate Sysbol iterator overight the above iterator
-     */
-    // *[Symbol.iterator] () { 
-    //   yield 'c';
-    //   yield 'd';
-    // }
+    }
 };
-
 var iterator =  SomeObj[Symbol.iterator];
+
 // console.log(iterator().next());
-// console.log(Array.from(new Foo)); // [ 1, 2 ]
+// console.log(Array.from(new Foo)); //  [ 1, 2 ]
 // console.log(Array.from(SomeObj)); // [ 'a', 'b' ]
 
 function* gardenCity(){
@@ -74,10 +83,10 @@ function* gardenCity(){
   }
 
   var p1 = property();
-  console.log(p1.next());
-  console.log(p1.next());
-  console.log(p1.next());
-  console.log(p1.next());
+//   console.log(p1.next());
+//   console.log(p1.next());
+//   console.log(p1.next());
+//   console.log(p1.next());
 //   console.log(p1.next());
 //   console.log(p1.next());
 

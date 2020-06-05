@@ -32,13 +32,13 @@ function storeToken(){
 function* authorize( username, password ){
     try{
 
-        const { token, isAuthenticate, message } =  yield call(loginRequest, {username, password, isLogin: true});
+        const { token, isAuthenticate, message } =  yield call(loginRequest, {username, password, isLogin: false});
         yield put(LOGIN_SUCESS({token, isAuthenticate, message}));
         yield call(storeToken);
         return token;
 
     }catch(error){
-        yield put(LOGIN_ERROR({error_message: error.message }));
+        yield put(LOGIN_ERROR({error_message: error }));
     }
 };
 
@@ -84,8 +84,9 @@ function* authFlow3(){
         const task = yield fork(authorize, username, password);
 
         const action = yield take([LOGOUT_REQUEST, LOGIN_ERROR]);
-        if(action.type == "LOGOUT_REQUEST"){
+        if(action.type == "LOGIN_ERROR"){
             yield cancel(task);
+            console.log("task", task)
         }
         yield call(clearSession);
         yield put(RESET_AUTH({}));

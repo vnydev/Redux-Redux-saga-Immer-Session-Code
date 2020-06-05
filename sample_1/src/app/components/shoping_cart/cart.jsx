@@ -10,19 +10,20 @@ export default class ShoppingCart extends Component {
                 price: 85000,
             },
             {
-                id: 1,
+                id: 2,
                 name: "Apple iphone",
                 price: 60000,
             },
             {
-                id: 1,
+                id: 3,
                 name: "Apple Watch",
-                price: 85000,
+                price: 45000,
             },
         ],
     };
 
     addProduct = (product) => {
+        console.log("product", product)
         const { ADD_PRODUCT_REQUEST } = this.props;
         ADD_PRODUCT_REQUEST({
             ...product,
@@ -46,6 +47,7 @@ export default class ShoppingCart extends Component {
         const {ordered} = this.props;
         return (
             <div className="cart">
+                <h1>Immer Example</h1>
                 <h3> All available products </h3>
                 <table>
                     <tr>

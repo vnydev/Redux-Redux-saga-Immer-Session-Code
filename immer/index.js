@@ -17,6 +17,7 @@ var productData = [
 ];
 var nextProductData = immer_1.produce(productData, function (draft) {
     draft.push({ name: "Nokia", price: 4000 });
+    // return draft;
 });
 console.log(productData.length);
 console.log(nextProductData === productData);
