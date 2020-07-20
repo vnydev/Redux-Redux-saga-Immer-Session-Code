@@ -5,15 +5,17 @@ import AuthSagas from './authActionWorker';
 import SampleSagas from './sagas_sample';
 import CounterSagas from './counterActionWorker';
 import ShoppingCartSagas from './shoppingCartActionWorker';
+import DemoFork from './fork_saga';
 
 function* rootSagas(){
   yield all([
-    UserSagas(),
-    ProductSagas(),
+    // UserSagas(),
+    // ProductSagas(),
     AuthSagas(),
     SampleSagas(),
     CounterSagas(),
-    ShoppingCartSagas()
+    ShoppingCartSagas(),
+    DemoFork()
   ]);
 }
 

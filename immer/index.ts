@@ -1,4 +1,4 @@
-import {produce} from 'immer';
+import produce from 'immer';
 
 const productData = [
     {
@@ -15,10 +15,10 @@ const productData = [
     }
 ]
 
-const nextProductData = produce(productData, draft => {
+const nextProductData = produce((productData: any, draft: any )=> {
     draft.push({name:"Nokia", price: 4000})
     // return draft;
 })
 
 console.log(productData.length)
-console.log(nextProductData === productData)
+console.log(nextProductData )

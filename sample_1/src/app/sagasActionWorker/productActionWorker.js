@@ -1,9 +1,18 @@
-import { call, put, takeLatest, select, take, takeEvery } from 'redux-saga/effects';
+import { call, put, takeLatest, select, cps, takeEvery } from 'redux-saga/effects';
 
 import { Fetch } from  '../../services/http';
 import { SET_PRODUCT, SET_ERROR, PRO_FETCH_REQUEST, CREATE_PRODUCT, getProductState } from '../reducers/productSlice'; 
 
+// const cb = (err, data) => data;
+
 // Http Request
+// const GetProductsList2 = (url, cb)=>{
+//     // let url = "product";
+//     Fetch(url, "GET")
+//     .then(res => cb(null, res))
+//     .catch(cb);
+// };
+
 const GetProductsList = ()=> {
     let url = "product";
     return Fetch(url, "GET");
@@ -21,6 +30,8 @@ function* FetchProducts(action){
         const {productList} = yield select(getProductState);
         // pass true in action.payload to force the function get new product list
         if(productList.length === 0 || action.payload){
+            // const {data, status} =  yield cps(GetProductsList2, "product");
+            // console.log("p_res", data)
             const {data, status} =  yield call(GetProductsList);
             yield put(SET_PRODUCT({productList: data}));
         }
